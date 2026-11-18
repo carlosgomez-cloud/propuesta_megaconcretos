@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Megaconcretos × Jeeves · Aprobación de cupo y Simulador de Eficiencia Financiera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0B0E;--card:#141418;--card2:#17171C;--green:#00D68F;--gold:#C9A84C;--txt:#F5F5F7;--mut:#9C9CA6;--bd:#26262E}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:Inter,system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:'Inter Tight',Inter,sans-serif;letter-spacing:-.02em}
+.gold{color:var(--gold)}.green{color:var(--green)}
+.top{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
+.brand{font-family:'Inter Tight';font-weight:800;font-size:22px;letter-spacing:.18em}
+.brand small{display:block;font-size:10px;letter-spacing:.2em;color:var(--mut);font-weight:500}
+.clogo{height:64px;width:auto;border-radius:4px}
+.hero{padding:30px 0 50px;border-bottom:1px solid var(--bd)}
+.pill{display:inline-block;border:1px solid var(--bd);border-radius:999px;padding:6px 14px;font-size:12px;color:var(--mut);margin-bottom:18px}
+.pill.ok{border-color:#1f3a2f;color:var(--green);background:#0f1a15}
+.hero h1{font-size:clamp(30px,4.6vw,52px);line-height:1.08;font-weight:700;max-width:900px}
+.hero p.lead{color:var(--mut);font-size:17px;max-width:780px;margin-top:18px}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.stat{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:12px 16px}
+.stat b{display:block;font-family:'Inter Tight';font-size:22px;color:var(--gold)}
+.stat span{font-size:12px;color:var(--mut)}
+.cards{display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-top:34px}
+.cc{display:flex;flex-direction:column;gap:8px}
+.cc-photo{background:#000;border:1px solid var(--bd);border-radius:16px;overflow:hidden}
+.cc-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.cc span{font-size:12px;color:var(--mut)}
+.p-elite{width:190px;height:245px}.p-corp{width:260px;height:156px}.p-virt{width:230px;height:139px}.p-pay{width:280px;height:125px}
+section{padding:56px 0;border-bottom:1px solid var(--bd)}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.sh h2{font-size:clamp(24px,3vw,34px)}
+.sh p{color:var(--mut);max-width:680px;margin-top:6px}
+.toggle-btn{background:transparent;border:1px solid var(--bd);color:var(--txt);border-radius:999px;padding:10px 18px;font:500 14px Inter;cursor:pointer}
+.toggle-btn:hover{border-color:var(--gold)}
+.panel{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:22px;margin-bottom:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+label{display:block;font-size:13px;color:var(--mut);margin-bottom:6px}
+input[type=number],input[type=text]{width:100%;background:var(--card2);border:1px solid var(--bd);color:var(--txt);border-radius:10px;padding:11px 12px;font:500 15px Inter}
+input:disabled{opacity:.85;color:var(--gold)}
+.hint{font-size:12px;color:var(--mut);margin-top:5px}
+.note{font-size:12.5px;color:var(--mut);background:var(--card2);border:1px dashed var(--bd);border-radius:12px;padding:14px;margin-top:18px}
+.res-title{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin:6px 0 12px}
+.rsg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.rs{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:18px}
+.rs small{color:var(--mut);font-size:13px}
+.rs b{display:block;font-family:'Inter Tight';font-size:24px;margin-top:4px;color:var(--green)}
+.tot{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:16px}
+.tt{background:linear-gradient(180deg,#121a16,#141418);border:1px solid #1f3a2f;border-radius:18px;padding:22px}
+.tt small{color:var(--mut)}
+.tt .big{font-family:'Inter Tight';font-size:34px;font-weight:700;color:var(--green);margin:4px 0 10px}
+.tt .net{font-size:14px;color:var(--mut);border-top:1px solid var(--bd);padding-top:10px}
+.tt .net b{color:var(--txt);font-size:18px}
+.roe{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:16px}
+.rr{background:linear-gradient(180deg,#1f1a0d,#141418);border:1px solid #4a3d18;border-radius:18px;padding:24px;text-align:center}
+.rr small{color:var(--gold);letter-spacing:.1em;text-transform:uppercase;font-size:12px}
+.rr .big{font-family:'Inter Tight';font-size:52px;font-weight:800;color:var(--gold);line-height:1.1;margin-top:6px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--bd);border-radius:16px;overflow:hidden}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--bd);vertical-align:top;font-size:14.5px}
+th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);background:var(--card2)}
+td:first-child{font-weight:600;width:24%}
+td:nth-child(2){color:var(--mut)}
+tr:last-child td{border-bottom:none}
+.tbl{overflow-x:auto}
+/* aprobación */
+.apv{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.ap{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:24px}
+.ap.g{border-color:#4a3d18;background:linear-gradient(180deg,#1f1a0d,#141418)}
+.ap h3{font-size:18px;margin-bottom:10px}
+.ap .amt{font-family:'Inter Tight';font-size:44px;font-weight:800;color:var(--gold);line-height:1.05}
+.ap .sub{color:var(--mut);font-size:14px;margin-top:6px}
+.ramp{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.rp{background:var(--card2);border:1px solid var(--bd);border-radius:14px;padding:14px}
+.rp small{color:var(--mut);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.rp b{display:block;font-family:'Inter Tight';font-size:22px;margin-top:2px}
+.rp span{display:block;font-size:12.5px;color:var(--mut);margin-top:4px}
+.cond{list-style:none;counter-reset:c}
+.cond li{counter-increment:c;position:relative;padding:11px 0 11px 40px;border-bottom:1px solid #1d1d23;font-size:14.5px}
+.cond li:last-child{border-bottom:none}
+.cond li:before{content:counter(c);position:absolute;left:0;top:10px;width:26px;height:26px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);font:600 13px/24px Inter;text-align:center}
+.cond li small{display:block;color:var(--mut);font-size:13px}
+.plan{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.pc{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:24px}
+.pc.g{border-color:#4a3d18}
+.pc h3{font-size:20px;margin-bottom:4px}
+.pc .price{font-family:'Inter Tight';font-size:30px;font-weight:700;color:var(--gold);margin:6px 0 14px}
+.pc ul{list-style:none}
+.pc li{padding:7px 0 7px 24px;position:relative;font-size:14.5px;border-bottom:1px solid #1d1d23}
+.pc li:before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}
+.warn{margin-top:14px;font-size:13.5px;background:#1f1a0d;border:1px solid #4a3d18;color:#e9d9a8;border-radius:12px;padding:12px 14px}
+.cmp td{vertical-align:middle}
+.cmp td:nth-child(2),.cmp td:nth-child(3){color:var(--txt);text-align:center;width:26%}
+.cmp th:nth-child(2),.cmp th:nth-child(3){text-align:center}
+.cmp th:nth-child(2){color:var(--gold)}
+.yes{color:var(--green);font-weight:700}.no{color:#ff7a7a;font-weight:700}
+.cmp-note{font-size:12.5px;color:var(--mut);margin-top:10px}
+.ph{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.phc{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:22px}
+.phc .ic{font-size:24px}
+.phc h3{font-size:17px;margin:8px 0 6px}
+.phc p{color:var(--mut);font-size:14px}
+.phc.g{border-color:#4a3d18;background:linear-gradient(180deg,#1f1a0d,#141418)}
+.tag{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid #4a3d18;border-radius:999px;padding:4px 10px;margin-bottom:10px}
+.slider-box{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:18px 20px;margin-bottom:16px}
+.slider-box label{display:block;font-size:14px;color:var(--mut);margin-bottom:10px}
+.slider-box label b{color:var(--txt);font-size:18px}
+.slider-box input[type=range]{width:100%;accent-color:var(--gold);cursor:pointer}
+.slider-scale{position:relative;height:18px;font-size:12px;color:var(--mut);margin-top:4px}
+.slider-scale span{position:absolute;top:0;white-space:nowrap}
+.slider-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.slider-top label{margin:0}
+.manual{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mut)}
+.manual input{width:190px;background:var(--card2);border:1px solid var(--bd);color:var(--txt);border-radius:10px;padding:8px 10px;font:600 14px Inter;text-align:right}
+.over{color:var(--gold)}
+footer{padding:36px 0 50px;color:var(--mut);font-size:13.5px}
+footer b{color:var(--txt)}
+@media(max-width:640px){.p-elite{width:150px;height:195px}.p-corp,.p-virt,.p-pay{width:100%;height:auto;aspect-ratio:1.7}.cc{width:100%}.cc:first-child{width:auto}.clogo{height:48px}.ramp{grid-template-columns:1fr}.ap .amt{font-size:36px}}
+</style>
+</head>
+<body>
+<div id="gate" style="position:fixed;inset:0;background:#0B0B0E;z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;font-family:Inter,system-ui,sans-serif"><form id="gf" style="background:#141418;border:1px solid #26262E;border-radius:18px;padding:30px 26px;width:100%;max-width:340px;text-align:center;color:#F5F5F7"><img src="https://carlosgomez-cloud.github.io/propuesta_constructorabolivar/jeeves-logo_1.png" alt="Jeeves" style="height:42px;width:auto;display:block;margin:0 auto"><div style="color:#9C9CA6;font-size:14px;margin:8px 0 18px">Propuesta privada · Megaconcretos</div><input id="gp" type="password" placeholder="Clave de acceso" autocomplete="off" style="width:100%;background:#17171C;border:1px solid #26262E;color:#F5F5F7;border-radius:10px;padding:12px;font:500 15px Inter,sans-serif;margin-bottom:12px"><button type="submit" style="width:100%;background:#C9A84C;color:#0B0B0E;border:none;border-radius:10px;padding:12px;font:600 15px Inter,sans-serif;cursor:pointer">Ingresar</button><div id="ge" style="color:#ff7a7a;font-size:13px;margin-top:10px;min-height:16px"></div></form></div>
+<script>(function(){var H="72fe5f9ab3562142d934b878993e9b6c340bea01a50a3301476c6cd1761dda71";function open(){var g=document.getElementById("gate");if(g)g.remove();}try{if(sessionStorage.getItem("rk_mc")===H){open();return;}}catch(_){}document.getElementById("gf").addEventListener("submit",async function(e){e.preventDefault();var val=document.getElementById("gp").value.trim();var buf=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(val));var h=Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,"0")}).join("");if(h===H){try{sessionStorage.setItem("rk_mc",H)}catch(_){}open();}else{document.getElementById("ge").textContent="Clave incorrecta";}});})();</script>
+
+<div class="wrap">
+<div class="top">
+<div class="brand"><img src="https://carlosgomez-cloud.github.io/propuesta_constructorabolivar/jeeves-logo_1.png" alt="Jeeves" style="height:44px;width:auto;display:block"><small style="margin-top:8px">Propuesta para</small></div>
+<img class="clogo" src="megaconcretos-logo.png" alt="Megaconcretos" style="height:64px">
+</div>
+
+<div class="hero">
+<span class="pill ok">✓ Cupo aprobado · Plan Gold · Noviembre 2026</span>
+<h1>Cupo de <span class="gold">USD 78.000</span> para pagar a sus proveedores con tarjeta y con <span class="green">dispersión a cuentas</span>, y un Plan Gold que se paga solo.</h1>
+<p class="lead">Pagos a proveedores de cemento, agregados y operación con tarjetas corporativas y virtuales hasta 37 días sin intereses, sin 4x1000 y con 1% de cashback; y Jeeves Pay para los proveedores que no reciben tarjeta, desde el mismo cupo.</p>
+<div class="stats">
+<div class="stat"><b>COP 255M</b><span>cupo aprobado</span></div>
+<div class="stat"><b>1%</b><span>cashback · primeros 6 meses</span></div>
+<div class="stat"><b>60 meses</b><span>tarda Clara en igualar ese cashback</span></div>
+<div class="stat"><b>4x1000</b><span>exención total · tarjetas</span></div>
+<div class="stat"><b>37 días</b><span>sin intereses · tarjetas</span></div>
+</div>
+<div class="cards">
+<div class="cc"><div class="cc-photo p-elite"><img src="jeeves-card-world-elite.png" alt="Tarjeta World Elite"></div><span>World Elite · Gerencia</span></div>
+<div class="cc"><div class="cc-photo p-corp"><img src="jeeves-card-corporate.png" alt="Tarjeta Corporativa"></div><span>Corporativa · Proveedores</span></div>
+<div class="cc"><div class="cc-photo p-virt"><img src="jeeves-card-virtual.png" alt="Tarjeta Virtual"></div><span>Virtual · Pagos en línea</span></div>
+<div class="cc"><div class="cc-photo p-pay"><img src="jeeves-pay-proveedores.png" alt="Jeeves Pay"></div><span>Jeeves Pay · Dispersión a cuentas de proveedores</span></div>
+</div>
+</div>
+
+<section id="aprobacion">
+<div class="sh"><div>
+<h2>Aprobación y condiciones</h2>
+<p>Resultado del Comité de Crédito de Jeeves para Megaconcretos S.A.S. — cupo aprobado y requisitos para habilitarlo.</p>
+</div></div>
+<div class="apv">
+<div class="ap g">
+<h3>Cupo aprobado</h3>
+<div class="amt">USD 78.000</div>
+<div class="amt" style="font-size:28px;color:var(--txt);margin-top:6px">≈ COP 255.000.000</div>
+<div class="sub">Tarjetas corporativas y virtuales + Jeeves Pay · Plan Gold</div>
+<div class="ramp" style="grid-template-columns:1fr">
+<div class="rp"><small>Disponibilidad</small><b class="gold">100% desde el mes 1</b><span>El cupo completo queda disponible al activar la cuenta.</span></div>
+</div>
+</div>
+<div class="ap">
+<h3>Condiciones para la activación</h3>
+<ol class="cond">
+<li>Pagaré<small>Firmado por el representante legal, con aval personal de Miguel Ángel Mesa Gómez. Firma electrónica.</small></li>
+<li>Contrato de uso<small>Firma del acuerdo de servicio de la plataforma Jeeves.</small></li>
+<li>Suscripción a la plataforma · Plan Gold<small>USD 3.000 al año (≈ <span class="planCop">—</span>).</small></li>
+<li>Conexión con la DIAN<small>A través de Konvex, en menos de 5 minutos.</small></li>
+<li>Detalle del backlog de obras<small>Valor estimado y plazo de ejecución de los proyectos vigentes.</small></li>
+</ol>
+</div>
+</div>
+</section>
+
+<section id="calc">
+<div class="sh">
+<div>
+<h2>Simulador de eficiencia financiera</h2>
+<p>Calculado sobre el uso total del cupo aprobado (COP 255 millones al mes en pagos con tarjeta) y el Plan Gold. Mueve la barra para simular distintos niveles de consumo mensual; con el botón puedes ver y ajustar los demás supuestos.</p>
+</div>
+<button class="toggle-btn" id="btnCalc" onclick="toggleCalc()">⚙️ Ver cálculos y supuestos</button>
+</div>
+
+<div class="panel" id="calcPanel" hidden>
+<div class="grid">
+<div><label>Plan de la Plataforma</label><input type="text" value="Gold" disabled></div>
+<div><label>Valor Anual del Plan (USD)</label><input type="number" id="planUSD" value="3000" min="0" step="100"></div>
+<div><label>TRM del día (COP/USD)</label><input type="number" id="trm" value="3269.88" min="0" step="0.01"><div class="hint">TRM de referencia de la aprobación (editable). El valor se pacta en COP a la TRM del día de la firma.</div></div>
+<div><label>Gravamen 4x1000 (GMF) · anual</label><input type="text" id="gmfPrev" disabled></div>
+<div><label>Cashback 1% · primeros 6 meses</label><input type="text" id="cbPrev" disabled></div>
+<div><label>Cashback Clara (%)</label><input type="number" id="claraPct" value="0.10" min="0" step="0.01"><div class="hint">Cashback de Clara sobre el consumo mensual</div></div>
+<div><label>Suscripción anual de Clara (COP)</label><input type="number" id="claraAnual" value="3700000" step="100000"><div class="hint">Valor de referencia de mercado (editable)</div></div>
+</div>
+<div class="panel" style="margin:18px 0 0;background:var(--card2)">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px"><b style="font-size:15px">🧾 Ahorro por Automatización de Facturas</b><label style="margin:0;display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="chkFact" style="accent-color:var(--green);width:16px;height:16px"> Activar</label></div>
+<div class="grid" id="factGrid" style="opacity:.45">
+<div><label>Salario mensual operativo (COP)</label><input type="number" id="salario" value="3500000" step="100000"></div>
+<div><label>Facturas procesadas al mes</label><input type="number" id="facturas" value="200" step="5"><div class="hint">Estimado · no confirmado con Megaconcretos</div></div>
+<div><label>Minutos por factura (captura manual)</label><input type="number" id="minutos" value="8" step="1"></div>
+<div><label>Horas trabajadas al mes</label><input type="number" id="horas" value="160" step="10"></div>
+</div>
+</div>
+<div class="note"><b>Fórmulas.</b> Volumen anual = gasto mensual × 12 · Ahorro 4x1000 = volumen anual × 0,4% · Cashback = gasto mensual × 6 meses × 1% (solo primer año) · Automatización de facturas (si se activa) = facturas/mes × minutos ÷ 60 × (salario ÷ horas) × 12 · Costo de plataforma = valor anual del plan × TRM · Neto = ahorro total − costo de plataforma · ROE = neto ÷ costo de plataforma · Veces que se cubre el plan = ahorro total ÷ costo de plataforma · Consumo mínimo mensual para cubrir la suscripción: con 4x1000 + cashback = costo ÷ (12 × 0,4% + 6 × 1%) · solo con 4x1000 = costo ÷ (12 × 0,4%). Cashback de Clara = gasto mensual × 12 × 0,10%.<br><br><b>Supuestos.</b> El gasto de referencia es el cupo aprobado completo (COP 255 millones/mes) usado en pagos con tarjeta. La suscripción de Clara es un valor de referencia y se puede ajustar. El ahorro por automatización de facturas viene desactivado; al activarlo, salario, facturas, minutos y horas son estimaciones no confirmadas. La TRM es de referencia y se puede ajustar.</div>
+</div>
+
+<div class="slider-box">
+<div class="slider-top">
+<label>Gasto mensual en tarjetas: <b id="gastoLbl">—</b> <span id="gastoPct" style="font-size:13px"></span></label>
+<div class="manual">Ingresar valor (COP) <input type="text" inputmode="numeric" id="gastoTxt" value="255.000.000"></div>
+</div>
+<input type="range" id="gastoRange" min="20000000" max="400000000" step="500000" value="255000000">
+<input type="hidden" id="gasto" value="255000000">
+<div class="slider-scale"><span style="left:0">$20 millones</span><span style="left:61.8%;transform:translateX(-50%)">▲ $255 millones · cupo aprobado</span><span style="right:0">$400 millones</span></div>
+<div class="hint">Línea de crédito aprobada: COP 255.000.000</div>
+</div>
+
+<div class="res-title">Ahorros por rubro · Anual</div>
+<div class="rsg">
+<div class="rs"><small>Ahorro 4x1000 (GMF)</small><b id="rGmf">—</b></div>
+<div class="rs"><small>Cashback 1% · primeros 6 meses</small><b id="rCb">—</b></div>
+<div class="rs"><small>Automatización de facturas</small><b id="rFact">—</b></div>
+</div>
+
+<div class="tot">
+<div class="tt"><small>Ahorro Total · Primer Año</small><div class="big" id="t1">—</div><div class="net">Menos costo de plataforma (<span class="cost">—</span>) = <b id="n1">—</b> neto</div></div>
+<div class="tt"><small>Ahorro Total · A partir del segundo año</small><div class="big" id="t2">—</div><div class="net">Menos costo de plataforma (<span class="cost">—</span>) = <b id="n2">—</b> neto</div></div>
+</div>
+
+<div class="tot">
+<div class="tt" style="background:linear-gradient(180deg,#1f1a0d,#141418);border-color:#4a3d18"><small>🔁 Veces que se cubre el Plan Gold · primer año</small>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px">
+<div><div style="font-size:12px;color:var(--mut)">Solo con el cashback</div><div class="big" id="xCb" style="color:var(--gold);font-size:30px;margin:2px 0">—</div></div>
+<div><div style="font-size:12px;color:var(--mut)">Cashback + 4x1000</div><div class="big" id="xTot" style="color:var(--gold);font-size:30px;margin:2px 0">—</div></div>
+</div>
+<div class="net" style="margin-top:12px">Cuántas veces el ahorro paga la suscripción anual (<span class="cost">—</span>).</div></div>
+<div class="tt" style="background:linear-gradient(180deg,#1f1a0d,#141418);border-color:#4a3d18"><small>Consumo mínimo mensual para cubrir la suscripción</small>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px">
+<div><div style="font-size:12px;color:var(--mut)">Con 4x1000 + cashback</div><div class="big" id="minMes" style="color:var(--gold);font-size:26px;margin:2px 0">—</div><div style="font-size:12.5px;color:var(--mut)"><b id="minPct" style="color:var(--txt)">—</b> del cupo</div></div>
+<div><div style="font-size:12px;color:var(--mut)">Solo con 4x1000</div><div class="big" id="minMes2" style="color:var(--gold);font-size:26px;margin:2px 0">—</div><div style="font-size:12.5px;color:var(--mut)"><b id="minPct2" style="color:var(--txt)">—</b> del cupo</div></div>
+</div>
+<div class="net" style="margin-top:12px">El cashback aplica los primeros 6 meses; sin cashback, el consumo necesario es el de "Solo con 4x1000".</div></div>
+</div>
+
+<div class="tt" style="margin-top:16px;background:linear-gradient(180deg,#1f1a0d,#141418);border-color:#4a3d18"><small>⏱️ Tiempo que tardaría Clara en igualar el cashback de Jeeves</small>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:10px">
+<div><div style="font-size:12px;color:var(--mut)">Jeeves · 1% durante 6 meses</div><div class="big" id="tJ" style="color:var(--green);font-size:26px;margin:2px 0">—</div><div style="font-size:12.5px;color:var(--mut)"><b id="tJm" style="color:var(--txt)">—</b> al mes</div></div>
+<div><div style="font-size:12px;color:var(--mut)">Clara · <span id="tCpct">0,10%</span> mensual</div><div class="big" id="tCm" style="color:var(--txt);font-size:26px;margin:2px 0">—</div><div style="font-size:12.5px;color:var(--mut)">al mes</div></div>
+<div><div style="font-size:12px;color:var(--mut)">Meses para igualar a Jeeves</div><div class="big" id="tMeses" style="color:var(--gold);font-size:26px;margin:2px 0">—</div><div style="font-size:12.5px;color:var(--mut)" id="tAnos">—</div></div>
+</div>
+<div class="net" style="margin-top:12px" id="tTxt">—</div></div>
+
+<div class="roe">
+<div class="rr"><small>🏆 ROE · Primer año</small><div class="big" id="roe1">—</div></div>
+<div class="rr"><small>🏆 ROE · A partir del segundo año</small><div class="big" id="roe2">—</div></div>
+</div>
+</section>
+
+<section id="comparativo">
+<div class="sh"><div><h2>Jeeves vs. Clara</h2><p>Comparativo sobre el mismo consumo mensual del simulador (≈ <span id="cmpGasto">—</span>/mes).</p></div></div>
+<div class="tbl"><table class="cmp">
+<tr><th>Concepto</th><th>Jeeves</th><th>Clara</th></tr>
+<tr><td>Cashback</td><td><b class="gold">1%</b><br><small style="color:var(--mut)">primeros 6 meses</small></td><td id="cbCPct">0,10%</td></tr>
+<tr><td>Cashback estimado · primer año</td><td><b class="green" id="cbJeeves">—</b></td><td id="cbClara">—</td></tr>
+<tr><td>Diferencia a favor con Jeeves</td><td colspan="2" style="text-align:center"><b class="gold" id="cbDiff" style="font-size:20px">—</b></td></tr>
+<tr><td>Tiempo para igualar el cashback de Jeeves<br><small style="color:var(--mut);font-weight:400">Lo que Jeeves devuelve en sus primeros 6 meses</small></td><td><b class="gold" style="font-size:18px">6 meses</b><br><small style="color:var(--mut)">al 1%</small></td><td><b id="cbMeses" style="font-size:18px">—</b><br><small style="color:var(--mut)" id="cbAnos">—</small></td></tr>
+<tr><td>Suscripción anual</td><td><b id="subJ">—</b><br><small style="color:var(--mut)">Plan Gold · todo incluido</small></td><td id="subC">—<br><small style="color:var(--mut)">valor de referencia</small></td></tr>
+<tr><td>Costo neto · primer año<br><small style="color:var(--mut);font-weight:400">Suscripción − cashback</small></td><td><b class="green" id="netJ">—</b></td><td id="netC">—</td></tr>
+<tr><td>Pago a proveedores que no reciben tarjeta<br><small style="color:var(--mut);font-weight:400">Dispersión a cuentas en segundos, individual o masiva</small></td><td><span class="yes">✓ Jeeves Pay</span><br><small style="color:var(--mut)">Desde el mismo cupo, hasta 37 días</small></td><td><span class="no">✗</span><br><small style="color:var(--mut)">Solo pagos con tarjeta</small></td></tr>
+<tr><td>Tipos de límite por tarjeta</td><td><span class="yes">✓</span><br><small style="color:var(--mut)">Diario, semanal, mensual y de por vida</small></td><td>Diario y mensual</td></tr>
+<tr><td>Control por categoría y comercio<br><small style="color:var(--mut);font-weight:400">Ej.: una tarjeta solo para un proveedor de cemento</small></td><td><span class="yes">✓</span><br><small style="color:var(--mut)">Bloquear o habilitar categorías, o limitar a un comercio específico</small></td><td>Bloqueo de categorías</td></tr>
+<tr><td>Agente de IA para legalizaciones<br><small style="color:var(--mut);font-weight:400">Detecta transacciones sin soporte o con inconsistencias</small></td><td><span class="yes">✓</span></td><td>—</td></tr>
+<tr><td>Integración contable</td><td><span class="yes">✓</span><br><small style="color:var(--mut)">API sin costo o archivo con su estructura contable</small></td><td>—</td></tr>
+<tr><td>Creación masiva de tarjetas físicas y virtuales</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+</table></div>
+<div class="cmp-note">Cashback de Clara calculado al 0,10% sobre 12 meses del mismo consumo. Cashback de Jeeves: 1% durante los primeros 6 meses. Suscripción de Clara: valor de referencia, ajustable en "Ver cálculos y supuestos". Con el 0,10%, Clara necesita 60 meses (5 años) para devolver lo que Jeeves devuelve en 6 meses al 1%.</div>
+</section>
+
+<section id="diag">
+<div class="sh"><div><h2>Diagnóstico</h2><p>Lo que conversamos y cómo lo resuelve Jeeves.</p></div></div>
+<div class="tbl"><table>
+<tr><th>Frente</th><th>Hoy</th><th>Con Jeeves</th></tr>
+<tr><td>Pago a proveedores</td><td>Pagos de cemento, agregados y operación por transferencia; fricción con plataformas anteriores.</td><td>Pago con tarjeta hasta 37 días sin intereses y, para quien no recibe tarjeta, Jeeves Pay con dispersión a cuentas desde el mismo cupo.</td></tr>
+<tr><td>Flujo de caja</td><td>Operación en crecimiento (nueva planta), estacionalidad y obligaciones por leasing de maquinaria y vehículos.</td><td>Hasta 37 días de financiación sin interés sobre COP 255 millones, sin tocar las líneas bancarias actuales.</td></tr>
+<tr><td>Costo financiero</td><td>4x1000 sobre cada pago a proveedores.</td><td>Exención total del 4x1000 en pagos con tarjeta y 1% de cashback los primeros 6 meses.</td></tr>
+<tr><td>Control y conciliación</td><td>Soportes y conciliación manual de pagos.</td><td>Tarjetas por proveedor o por obra, límites y categorías, captura de soportes y exportación contable.</td></tr>
+</table></div>
+</section>
+
+<section id="plan">
+<div class="sh"><div><h2>Resumen del plan</h2></div></div>
+<div class="plan">
+<div class="pc g">
+<h3>Plan Gold</h3>
+<div class="price">USD 3.000 <span style="font-size:15px;color:var(--mut);font-weight:500">/ año</span></div>
+<div style="color:var(--mut);font-size:14px;margin:-8px 0 14px">≈ <span class="planCop">—</span> al año · se pacta en COP a la TRM del día de la firma</div>
+<ul>
+<li>Tarjetas físicas y virtuales · creación masiva</li>
+<li>Límites diarios, semanales, mensuales y de por vida</li>
+<li>Control por categoría y por comercio</li>
+<li>Jeeves Pay · pagos a proveedores con dispersión a cuentas</li>
+<li>Integración contable (API sin costo) y agentes de IA</li>
+</ul>
+</div>
+<div class="pc">
+<h3>Beneficios financieros</h3>
+<div class="price green" style="color:var(--green)" id="planNet">—</div>
+<ul>
+<li>Tarjetas: hasta 37 días sin intereses</li>
+<li>Exención total del 4x1000 en los pagos con tarjeta</li>
+<li>1% de cashback en tarjetas durante los primeros 6 meses</li>
+<li>Jeeves Pay: con interés diario solo cuando se usa</li>
+</ul>
+</div>
+</div>
+</section>
+
+<footer>
+<b>Carlos Gómez</b> · Senior Enterprise AE · Jeeves Colombia · carlos.gomez@tryjeeves.com · +57 316 480 1023<br>
+<span style="font-size:12px">Simulación con fines ilustrativos. Valores en USD más los impuestos que apliquen; el valor se pacta en COP a la TRM del día de la firma. Las condiciones finales quedan sujetas a la firma de la documentación indicada.</span>
+</footer>
+</div>
+
+<script>
+var GASTO_REF=255000000;
+function toggleCalc(){var p=document.getElementById('calcPanel');p.hidden=!p.hidden;document.getElementById('btnCalc').textContent=p.hidden?'⚙️ Ver cálculos y supuestos':'⚙️ Ocultar cálculos y supuestos';}
+function v(id){var x=parseFloat(document.getElementById(id).value);return isNaN(x)?0:x;}
+function cop(n){return (n<0?'−':'')+'$'+Math.round(Math.abs(n)).toLocaleString('es-CO');}
+function pct(n){return Math.round(n).toLocaleString('es-CO')+'%';}
+function veces(n){return n.toLocaleString('es-CO',{minimumFractionDigits:1,maximumFractionDigits:1})+'x';}
+function set(id,t){document.getElementById(id).textContent=t;}
+function calc(){
+var planUSD=v('planUSD'),trm=v('trm'),gasto=v('gasto');
+var fOn=document.getElementById('chkFact').checked;
+document.getElementById('factGrid').style.opacity=fOn?1:.45;
+var volumenAnual=gasto*12;
+var ahorroGMF=volumenAnual*0.004;
+var ahorroCashback=gasto*6*0.01;
+var ahorroFact=fOn?(v('facturas')*v('minutos')/60)*(v('horas')?v('salario')/v('horas'):0)*12:0;
+var costo=planUSD*trm;
+var t1=ahorroGMF+ahorroCashback+ahorroFact, t2=ahorroGMF+ahorroFact;
+var n1=t1-costo, n2=t2-costo;
+var r1=costo>0?n1/costo*100:0, r2=costo>0?n2/costo*100:0;
+var base=Math.max(0,costo-ahorroFact);
+var minMes=base/(12*0.004+6*0.01), minMes2=base/(12*0.004);
+document.getElementById('gmfPrev').value=cop(ahorroGMF);
+document.getElementById('cbPrev').value=cop(ahorroCashback);
+set('gastoLbl',cop(gasto)+' / mes');
+set('gastoPct','· '+(gasto/GASTO_REF*100).toLocaleString('es-CO',{maximumFractionDigits:0})+'% del cupo aprobado');
+set('rGmf',cop(ahorroGMF));set('rCb',cop(ahorroCashback));
+var rf=document.getElementById('rFact');rf.textContent=fOn?cop(ahorroFact):'Desactivado';rf.style.color=fOn?'':'var(--mut)';rf.style.fontSize=fOn?'':'18px';
+set('t1',cop(t1));set('n1',cop(n1));set('t2',cop(t2));set('n2',cop(n2));
+document.querySelectorAll('.cost').forEach(function(e){e.textContent=cop(costo);});
+set('roe1',pct(r1));set('roe2',pct(r2));
+set('xCb',costo>0?veces(ahorroCashback/costo):'—');set('xTot',costo>0?veces(t1/costo):'—');
+set('minMes',cop(minMes));set('minMes2',cop(minMes2));
+set('minPct',(minMes/GASTO_REF*100).toLocaleString('es-CO',{maximumFractionDigits:1})+'%');
+set('minPct2',(minMes2/GASTO_REF*100).toLocaleString('es-CO',{maximumFractionDigits:1})+'%');
+document.querySelectorAll('.planCop').forEach(function(e){e.textContent='COP '+Math.round(costo).toLocaleString('es-CO');});
+set('planNet',cop(n1)+' neto · año 1');
+var cp=v('claraPct')/100, cbClara=gasto*12*cp, subC=v('claraAnual');
+set('cmpGasto',cop(gasto));set('cbJeeves',cop(ahorroCashback));set('cbClara',cop(cbClara));
+set('cbDiff',cop(ahorroCashback-cbClara)+' más en el primer año');
+var cpTxt=(cp*100).toLocaleString('es-CO',{minimumFractionDigits:2,maximumFractionDigits:2})+'%';
+var mC=(gasto>0&&cp>0)?ahorroCashback/(gasto*cp):0;
+var mTxt=cp>0?Math.round(mC)+' meses':'Nunca';
+var aTxt=cp>0?'≈ '+(mC/12).toLocaleString('es-CO',{maximumFractionDigits:1})+' años':'sin cashback';
+set('cbMeses',mTxt);set('cbAnos',aTxt+' al '+cpTxt);set('cbCPct',cpTxt);set('tCpct',cpTxt);
+set('tJ',cop(ahorroCashback));set('tJm',cop(gasto*0.01));set('tCm',cop(gasto*cp));set('tMeses',mTxt);set('tAnos',aTxt);
+set('tTxt',cp>0?'Con '+cop(gasto)+' al mes en tarjetas, Jeeves devuelve '+cop(ahorroCashback)+' en los primeros 6 meses. Al '+cpTxt+', Clara devuelve '+cop(gasto*cp)+' al mes y necesita '+mTxt+' ('+aTxt+') para llegar al mismo valor.':'Sin cashback de Clara, nunca se iguala el cashback de Jeeves.');
+set('subJ',cop(costo));
+document.getElementById('subC').firstChild.textContent=cop(subC);
+var nJ=costo-ahorroCashback, nC=subC-cbClara;
+set('netJ',nJ<0?'+'+cop(-nJ)+' a favor':cop(nJ));
+set('netC',nC<0?'+'+cop(-nC)+' a favor':cop(nC));
+}
+['planUSD','trm','salario','facturas','minutos','horas','claraPct','claraAnual'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});
+document.getElementById('chkFact').addEventListener('change',calc);
+(function(){
+var r=document.getElementById('gastoRange'), t=document.getElementById('gastoTxt'), h=document.getElementById('gasto');
+function fmt(n){return Math.round(n).toLocaleString('es-CO');}
+function setVal(n,src){n=Math.max(0,Math.round(n)||0);h.value=n;if(src!=='r')r.value=Math.min(Math.max(n,+r.min),+r.max);if(src!=='t')t.value=fmt(n);calc();}
+r.addEventListener('input',function(){setVal(+r.value,'r');});
+t.addEventListener('input',function(){setVal(+t.value.replace(/[^0-9]/g,''),'t');});
+t.addEventListener('blur',function(){t.value=fmt(+h.value);});
+})();
+calc();
+</script>
+
+</body>
+</html>
