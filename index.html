@@ -174,7 +174,7 @@ footer b{color:var(--txt)}
 <li>Contrato de uso<small>Firma del acuerdo de servicio de la plataforma Jeeves.</small></li>
 <li>Suscripción a la plataforma · Plan Gold<small>USD 3.000 al año (≈ <span class="planCop">—</span>).</small></li>
 <li>Conexión con la DIAN<small>A través de Konvex, en menos de 5 minutos.</small></li>
-<li>Detalle del backlog de obras<small>Valor estimado y plazo de ejecución de los proyectos vigentes.</small></li>
+<li>Detalle del backlog de proyectos<small>Valor estimado y plazo de ejecución de los proyectos vigentes.</small></li>
 </ol>
 </div>
 </div>
@@ -231,7 +231,6 @@ footer b{color:var(--txt)}
 
 <div class="tot">
 <div class="tt"><small>Ahorro Total · Primer Año</small><div class="big" id="t1">—</div><div class="net">Menos costo de plataforma (<span class="cost">—</span>) = <b id="n1">—</b> neto</div></div>
-<div class="tt"><small>Ahorro Total · A partir del segundo año</small><div class="big" id="t2">—</div><div class="net">Menos costo de plataforma (<span class="cost">—</span>) = <b id="n2">—</b> neto</div></div>
 </div>
 
 <div class="tot">
@@ -259,7 +258,6 @@ footer b{color:var(--txt)}
 
 <div class="roe">
 <div class="rr"><small>🏆 ROE · Primer año</small><div class="big" id="roe1">—</div></div>
-<div class="rr"><small>🏆 ROE · A partir del segundo año</small><div class="big" id="roe2">—</div></div>
 </div>
 </section>
 
@@ -277,7 +275,6 @@ footer b{color:var(--txt)}
 <tr><td>Tipos de límite por tarjeta</td><td><span class="yes">✓</span><br><small style="color:var(--mut)">Diario, semanal, mensual y de por vida</small></td><td>Diario y mensual</td></tr>
 <tr><td>Control por categoría y comercio<br><small style="color:var(--mut);font-weight:400">Ej.: una tarjeta solo para un proveedor de cemento</small></td><td><span class="yes">✓</span><br><small style="color:var(--mut)">Bloquear o habilitar categorías, o limitar a un comercio específico</small></td><td>Bloqueo de categorías</td></tr>
 <tr><td>Agente de IA para legalizaciones<br><small style="color:var(--mut);font-weight:400">Detecta transacciones sin soporte o con inconsistencias</small></td><td><span class="yes">✓</span></td><td>—</td></tr>
-<tr><td>Integración contable</td><td><span class="yes">✓</span><br><small style="color:var(--mut)">API sin costo o archivo con su estructura contable</small></td><td>—</td></tr>
 <tr><td>Creación masiva de tarjetas físicas y virtuales</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
 </table></div>
 <div class="cmp-note">Cashback de Clara calculado al 0,10% sobre 12 meses del mismo consumo. Cashback de Jeeves: 1% durante los primeros 6 meses. Suscripción de Clara: valor de referencia, ajustable en "Ver cálculos y supuestos". Con el 0,10%, Clara necesita 60 meses (5 años) para devolver lo que Jeeves devuelve en 6 meses al 1%.</div>
@@ -290,7 +287,7 @@ footer b{color:var(--txt)}
 <tr><td>Pago a proveedores</td><td>Pagos de cemento, agregados y operación por transferencia; fricción con plataformas anteriores.</td><td>Pago con tarjeta hasta 37 días sin intereses y, para quien no recibe tarjeta, Jeeves Pay con dispersión a cuentas desde el mismo cupo.</td></tr>
 <tr><td>Flujo de caja</td><td>Operación en crecimiento (nueva planta), estacionalidad y obligaciones por leasing de maquinaria y vehículos.</td><td>Hasta 37 días de financiación sin interés sobre COP 255 millones, sin tocar las líneas bancarias actuales.</td></tr>
 <tr><td>Costo financiero</td><td>4x1000 sobre cada pago a proveedores.</td><td>Exención total del 4x1000 en pagos con tarjeta y 1% de cashback los primeros 6 meses.</td></tr>
-<tr><td>Control y conciliación</td><td>Soportes y conciliación manual de pagos.</td><td>Tarjetas por proveedor o por obra, límites y categorías, captura de soportes y exportación contable.</td></tr>
+<tr><td>Control y conciliación</td><td>Soportes y conciliación manual de pagos.</td><td>Tarjetas por proveedor o por proyecto, límites y categorías, y captura de soportes en la plataforma.</td></tr>
 </table></div>
 </section>
 
@@ -306,7 +303,7 @@ footer b{color:var(--txt)}
 <li>Límites diarios, semanales, mensuales y de por vida</li>
 <li>Control por categoría y por comercio</li>
 <li>Jeeves Pay · pagos a proveedores con dispersión a cuentas</li>
-<li>Integración contable (API sin costo) y agentes de IA</li>
+<li>Agentes de IA para legalizaciones</li>
 </ul>
 </div>
 <div class="pc">
@@ -356,9 +353,9 @@ set('gastoLbl',cop(gasto)+' / mes');
 set('gastoPct','· '+(gasto/GASTO_REF*100).toLocaleString('es-CO',{maximumFractionDigits:0})+'% del cupo aprobado');
 set('rGmf',cop(ahorroGMF));set('rCb',cop(ahorroCashback));
 var rf=document.getElementById('rFact');rf.textContent=fOn?cop(ahorroFact):'Desactivado';rf.style.color=fOn?'':'var(--mut)';rf.style.fontSize=fOn?'':'18px';
-set('t1',cop(t1));set('n1',cop(n1));set('t2',cop(t2));set('n2',cop(n2));
+set('t1',cop(t1));set('n1',cop(n1));
 document.querySelectorAll('.cost').forEach(function(e){e.textContent=cop(costo);});
-set('roe1',pct(r1));set('roe2',pct(r2));
+set('roe1',pct(r1));
 set('xCb',costo>0?veces(ahorroCashback/costo):'—');set('xTot',costo>0?veces(t1/costo):'—');
 set('minMes',cop(minMes));set('minMes2',cop(minMes2));
 set('minPct',(minMes/GASTO_REF*100).toLocaleString('es-CO',{maximumFractionDigits:1})+'%');
