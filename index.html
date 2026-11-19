@@ -197,7 +197,6 @@ footer b{color:var(--txt)}
 <div><label>Gravamen 4x1000 (GMF) · anual</label><input type="text" id="gmfPrev" disabled></div>
 <div><label>Cashback 1% · primeros 6 meses</label><input type="text" id="cbPrev" disabled></div>
 <div><label>Cashback Clara (%)</label><input type="number" id="claraPct" value="0.10" min="0" step="0.01"><div class="hint">Cashback de Clara sobre el consumo mensual</div></div>
-<div><label>Suscripción anual de Clara (COP)</label><input type="number" id="claraAnual" value="3700000" step="100000"><div class="hint">Valor de referencia de mercado (editable)</div></div>
 </div>
 <div class="panel" style="margin:18px 0 0;background:var(--card2)">
 <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px"><b style="font-size:15px">🧾 Ahorro por Automatización de Facturas</b><label style="margin:0;display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="chkFact" style="accent-color:var(--green);width:16px;height:16px"> Activar</label></div>
@@ -208,7 +207,7 @@ footer b{color:var(--txt)}
 <div><label>Horas trabajadas al mes</label><input type="number" id="horas" value="160" step="10"></div>
 </div>
 </div>
-<div class="note"><b>Fórmulas.</b> Volumen anual = gasto mensual × 12 · Ahorro 4x1000 = volumen anual × 0,4% · Cashback = gasto mensual × 6 meses × 1% (solo primer año) · Automatización de facturas (si se activa) = facturas/mes × minutos ÷ 60 × (salario ÷ horas) × 12 · Costo de plataforma = valor anual del plan × TRM · Neto = ahorro total − costo de plataforma · ROE = neto ÷ costo de plataforma · Veces que se cubre el plan = ahorro total ÷ costo de plataforma · Consumo mínimo mensual para cubrir la suscripción: con 4x1000 + cashback = costo ÷ (12 × 0,4% + 6 × 1%) · solo con 4x1000 = costo ÷ (12 × 0,4%). Cashback de Clara = gasto mensual × 12 × 0,10%.<br><br><b>Supuestos.</b> El gasto de referencia es el cupo aprobado completo (COP 255 millones/mes) usado en pagos con tarjeta. La suscripción de Clara es un valor de referencia y se puede ajustar. El ahorro por automatización de facturas viene desactivado; al activarlo, salario, facturas, minutos y horas son estimaciones no confirmadas. La TRM es de referencia y se puede ajustar.</div>
+<div class="note"><b>Fórmulas.</b> Volumen anual = gasto mensual × 12 · Ahorro 4x1000 = volumen anual × 0,4% · Cashback = gasto mensual × 6 meses × 1% (solo primer año) · Automatización de facturas (si se activa) = facturas/mes × minutos ÷ 60 × (salario ÷ horas) × 12 · Costo de plataforma = valor anual del plan × TRM · Neto = ahorro total − costo de plataforma · ROE = neto ÷ costo de plataforma · Veces que se cubre el plan = ahorro total ÷ costo de plataforma · Consumo mínimo mensual para cubrir la suscripción: con 4x1000 + cashback = costo ÷ (12 × 0,4% + 6 × 1%) · solo con 4x1000 = costo ÷ (12 × 0,4%). Cashback de Clara = gasto mensual × 12 × 0,10%.<br><br><b>Supuestos.</b> El gasto de referencia es el cupo aprobado completo (COP 255 millones/mes) usado en pagos con tarjeta. El ahorro por automatización de facturas viene desactivado; al activarlo, salario, facturas, minutos y horas son estimaciones no confirmadas. La TRM es de referencia y se puede ajustar.</div>
 </div>
 
 <div class="slider-box">
@@ -216,9 +215,9 @@ footer b{color:var(--txt)}
 <label>Gasto mensual en tarjetas: <b id="gastoLbl">—</b> <span id="gastoPct" style="font-size:13px"></span></label>
 <div class="manual">Ingresar valor (COP) <input type="text" inputmode="numeric" id="gastoTxt" value="255.000.000"></div>
 </div>
-<input type="range" id="gastoRange" min="20000000" max="400000000" step="500000" value="255000000">
+<input type="range" id="gastoRange" min="20000000" max="1500000000" step="1000000" value="255000000">
 <input type="hidden" id="gasto" value="255000000">
-<div class="slider-scale"><span style="left:0">$20 millones</span><span style="left:61.8%;transform:translateX(-50%)">▲ $255 millones · cupo aprobado</span><span style="right:0">$400 millones</span></div>
+<div class="slider-scale"><span style="left:0">$20 millones</span><span style="left:15.9%;transform:translateX(-50%)">▲ $255M · cupo aprobado</span><span style="right:0">$1.500 millones</span></div>
 <div class="hint">Línea de crédito aprobada: COP 255.000.000</div>
 </div>
 
@@ -269,15 +268,13 @@ footer b{color:var(--txt)}
 <tr><td>Cashback estimado · primer año</td><td><b class="green" id="cbJeeves">—</b></td><td id="cbClara">—</td></tr>
 <tr><td>Diferencia a favor con Jeeves</td><td colspan="2" style="text-align:center"><b class="gold" id="cbDiff" style="font-size:20px">—</b></td></tr>
 <tr><td>Tiempo para igualar el cashback de Jeeves<br><small style="color:var(--mut);font-weight:400">Lo que Jeeves devuelve en sus primeros 6 meses</small></td><td><b class="gold" style="font-size:18px">6 meses</b><br><small style="color:var(--mut)">al 1%</small></td><td><b id="cbMeses" style="font-size:18px">—</b><br><small style="color:var(--mut)" id="cbAnos">—</small></td></tr>
-<tr><td>Suscripción anual</td><td><b id="subJ">—</b><br><small style="color:var(--mut)">Plan Gold · todo incluido</small></td><td id="subC">—<br><small style="color:var(--mut)">valor de referencia</small></td></tr>
-<tr><td>Costo neto · primer año<br><small style="color:var(--mut);font-weight:400">Suscripción − cashback</small></td><td><b class="green" id="netJ">—</b></td><td id="netC">—</td></tr>
 <tr><td>Pago a proveedores que no reciben tarjeta<br><small style="color:var(--mut);font-weight:400">Dispersión a cuentas en segundos, individual o masiva</small></td><td><span class="yes">✓ Jeeves Pay</span><br><small style="color:var(--mut)">Desde el mismo cupo, hasta 37 días</small></td><td><span class="no">✗</span><br><small style="color:var(--mut)">Solo pagos con tarjeta</small></td></tr>
 <tr><td>Tipos de límite por tarjeta</td><td><span class="yes">✓</span><br><small style="color:var(--mut)">Diario, semanal, mensual y de por vida</small></td><td>Diario y mensual</td></tr>
 <tr><td>Control por categoría y comercio<br><small style="color:var(--mut);font-weight:400">Ej.: una tarjeta solo para un proveedor de cemento</small></td><td><span class="yes">✓</span><br><small style="color:var(--mut)">Bloquear o habilitar categorías, o limitar a un comercio específico</small></td><td>Bloqueo de categorías</td></tr>
 <tr><td>Agente de IA para legalizaciones<br><small style="color:var(--mut);font-weight:400">Detecta transacciones sin soporte o con inconsistencias</small></td><td><span class="yes">✓</span></td><td>—</td></tr>
 <tr><td>Creación masiva de tarjetas físicas y virtuales</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
 </table></div>
-<div class="cmp-note">Cashback de Clara calculado al 0,10% sobre 12 meses del mismo consumo. Cashback de Jeeves: 1% durante los primeros 6 meses. Suscripción de Clara: valor de referencia, ajustable en "Ver cálculos y supuestos". Con el 0,10%, Clara necesita 60 meses (5 años) para devolver lo que Jeeves devuelve en 6 meses al 1%.</div>
+<div class="cmp-note">Cashback de Clara calculado al 0,10% sobre 12 meses del mismo consumo. Cashback de Jeeves: 1% durante los primeros 6 meses. Con el 0,10%, Clara necesita 60 meses (5 años) para devolver lo que Jeeves devuelve en 6 meses al 1%.</div>
 </section>
 
 <section id="diag">
@@ -362,7 +359,7 @@ set('minPct',(minMes/GASTO_REF*100).toLocaleString('es-CO',{maximumFractionDigit
 set('minPct2',(minMes2/GASTO_REF*100).toLocaleString('es-CO',{maximumFractionDigits:1})+'%');
 document.querySelectorAll('.planCop').forEach(function(e){e.textContent='COP '+Math.round(costo).toLocaleString('es-CO');});
 set('planNet',cop(n1)+' neto · año 1');
-var cp=v('claraPct')/100, cbClara=gasto*12*cp, subC=v('claraAnual');
+var cp=v('claraPct')/100, cbClara=gasto*12*cp;
 set('cmpGasto',cop(gasto));set('cbJeeves',cop(ahorroCashback));set('cbClara',cop(cbClara));
 set('cbDiff',cop(ahorroCashback-cbClara)+' más en el primer año');
 var cpTxt=(cp*100).toLocaleString('es-CO',{minimumFractionDigits:2,maximumFractionDigits:2})+'%';
@@ -372,13 +369,8 @@ var aTxt=cp>0?'≈ '+(mC/12).toLocaleString('es-CO',{maximumFractionDigits:1})+'
 set('cbMeses',mTxt);set('cbAnos',aTxt+' al '+cpTxt);set('cbCPct',cpTxt);set('tCpct',cpTxt);
 set('tJ',cop(ahorroCashback));set('tJm',cop(gasto*0.01));set('tCm',cop(gasto*cp));set('tMeses',mTxt);set('tAnos',aTxt);
 set('tTxt',cp>0?'Con '+cop(gasto)+' al mes en tarjetas, Jeeves devuelve '+cop(ahorroCashback)+' en los primeros 6 meses. Al '+cpTxt+', Clara devuelve '+cop(gasto*cp)+' al mes y necesita '+mTxt+' ('+aTxt+') para llegar al mismo valor.':'Sin cashback de Clara, nunca se iguala el cashback de Jeeves.');
-set('subJ',cop(costo));
-document.getElementById('subC').firstChild.textContent=cop(subC);
-var nJ=costo-ahorroCashback, nC=subC-cbClara;
-set('netJ',nJ<0?'+'+cop(-nJ)+' a favor':cop(nJ));
-set('netC',nC<0?'+'+cop(-nC)+' a favor':cop(nC));
 }
-['planUSD','trm','salario','facturas','minutos','horas','claraPct','claraAnual'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});
+['planUSD','trm','salario','facturas','minutos','horas','claraPct'].forEach(function(id){document.getElementById(id).addEventListener('input',calc);});
 document.getElementById('chkFact').addEventListener('change',calc);
 (function(){
 var r=document.getElementById('gastoRange'), t=document.getElementById('gastoTxt'), h=document.getElementById('gasto');
